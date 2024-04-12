@@ -1,0 +1,28 @@
+
+.tlog{
+    color: #032B43 !important;
+}
+.login{
+    width: 50% !important;
+    background-color:  #78a3b19d !important;
+    color: #032B43 !important;
+}
+.log{
+    font-weight: bolder;
+}
+.logT{
+    margin-top: 10%;
+    
+}
+
+@media screen and (max-width: 448px) {
+    .login {
+        width: 100% !important;
+        margin: 0;
+        font-size: small;
+    }
+    /* .lTitre{
+        font-size: small;
+    } */
+
+}

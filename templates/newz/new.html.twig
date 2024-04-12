@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajoutez un carousel{% endblock %}
+
+{% block body %}
+<section id='sectionAdhesion' style="margin-top:8%">
+	<div class="container w-75">
+        
+        <div id="formPersPhy">
+        <h1>Créer un carousel</h1>
+            {{ form_start(form) }}
+                {{ form_row(form.type) }}
+            <div class="d-flex civiliteSelectDiv" style="">
+                <div class='w-25'>
+                    {{ form_row(form.titre) }}
+                </div>
+                <div class='w-100 ms-5'>
+                    {{ form_row(form.auteur) }}
+                </div>
+            </div>
+            {{ form_row(form.date) }}
+            {{ form_row(form.image) }}
+            {{ form_row(form.contenu) }}
+            <div class="my-3 d-flex justify-content-around">
+            <button type="submit" class="btn btn-primary">Créer votre article</button>
+            <a class="btn btn-primary" href="{{ path('app_user_index') }}">Retour</a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+	</div>
+</section>
+
+<style>
+    #formPersPhy input[type="file"] {
+        border: none;
+    }
+</style>
+{% endblock %}

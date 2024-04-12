@@ -1,0 +1,77 @@
+{# templates/article/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.titre }}{% endblock %}
+
+{% block body %}
+
+    <div id="actualites-banner">
+        <style>
+            #actualites-banner {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60vh;
+                background-size: cover;
+                background-position: center;
+                text-align: center;
+                color: var(--text-1);
+                background-image: url({{ asset('upload/' ~ article.image) }}); /* URL dynamique provenant de votre base de données */
+            }
+        </style>
+        <div class="div_h1_p">
+            <h1>{{ article.titre }}</h1>
+            <p>{{ article.description|raw }}</p>
+            <p>Publié le : {{article.date|date('d-m-Y')}} , par : {{article.auteur}}</p>
+        </div>
+    </div>
+
+    <div class="contenu_show_article">
+        <div class="pb-4">
+            <h2 class="pb-2">{{ article.sousTitre1 }}</h2>
+            <p>{% autoescape false %}{{ article.contenu|raw }}{% endautoescape %}</p>
+            <p>{{ article.paragraphe1 }}</p>
+            <p>{{ article.paragraphe2 }}</p>
+            <p>{{ article.paragraphe3 }}</p>
+        </div>
+        <div class="pb-4">
+
+            <h2 class="pb-2">{{ article.sousTitre2 }}</h2>
+            <p>{{ article.paragraphe4 }}</p>
+            <p>{{ article.paragraphe5 }}</p>
+        </div>
+
+        <div class="images_show_article row justify-content-center flex-wrap pb-5">
+            <img class="img_show_article col-3" src="{{ article.image1 }}" alt="">
+            <img class=" img_show_article col-3" src="{{ article.image2 }}" alt="">
+            <img class=" img_show_article col-3" src="{{ article.image3 }}" alt="">
+        </div>
+
+        <div class="pb-4">
+
+            <h2 class="pb-2">{{ article.sousTitre3 }}</h2>
+            <p>{{ article.paragraphe6 }}</p>
+        </div>
+
+        <div class="pb-4">
+
+            <h2 class="pb-2">{{ article.sousTitre4 }}</h2>
+            <p>{{ article.paragraphe7 }}</p>
+            <p>{{ article.paragraphe8 }}</p>
+        </div>
+
+        <div class="pb-4">
+
+            <h2 class="pb-2">{{ article.sousTitre5 }}</h2>
+            <p>{{ article.paragraphe9 }}</p>
+            <p>{{ article.paragraphe10 }}</p>
+        </div>
+        
+           
+    </div>
+            
+    
+
+    {# Ajoutez d'autres détails de l'article selon vos besoins #}
+{% endblock %}

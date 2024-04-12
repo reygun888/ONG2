@@ -1,0 +1,8 @@
+easy_admin:
+    design:
+        title: 'Mon application'
+    dashboard:
+        title: 'Tableau de bord'
+    locale: '%kernel.default_locale%'
+    timezone: 'Europe/Paris'
+

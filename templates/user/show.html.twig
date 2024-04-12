@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+<div class="show container">
+    <div class="profil">
+        <h3 class="mb-5 text-center"> Mes informations</h3>
+        {% if user.type == 'adherent' %}
+            <div class="champ d-flex">
+                <h6 class="form-control me-5"><strong> Civilité : </strong>{{ user.civilite }}</h6>
+                <h6 class="form-control"><strong> Prénom : </strong>{{ user.prenom }}</h6>
+            </div>
+        {% elseif user.type == 'entreprise' %}
+            <div class="champ d-flex">
+                <h6 class="form-control me-5"><strong> Siren : </strong>{{ user.siren }}</h6>
+                <h6 class="form-control"><strong> Forme Juridique : </strong>{{ user.formeJuridique }}</h6>
+            </div>
+        {% endif %}
+                <h6 class="form-control"><strong> Nom ou Raison Sociale : </strong>{{ user.nom }}</h6>
+                <h6 class="form-control"><strong> Email : </strong>{{ user.email }}</h6>      
+                <h6 class="form-control"><strong>Telephone : </strong>{{ user.telephone }}</h6>
+                <h6 class="form-control"><strong>Adresse : </strong>{{ user.adresse }}</h6>
+                <h6 class="form-control"><strong>Complement d'adresse : </strong>{{ user.complementAdresse}}</h6>
+            <div class="champ d-flex">
+                <h6 class="form-control me-5"><strong>Code Postal : </strong> {{ user.codePostal }}</h6>
+                <h6 class="form-control"><strong>Ville : </strong>{{ user.ville }}</h6>
+            </div>
+                <h6 class="form-control"><strong>Pays : </strong>{{ user.pays }}</h6>
+        <div class="row">
+            <div class="mb-3 d-flex justify-content-around">
+                <a class="b_mod btn "  href="{{path('app_user_edit', {'id':user.id})}}"><i class="fa-regular fa-pen-to-square me-1"></i>Modifier mon profil</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

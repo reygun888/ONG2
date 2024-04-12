@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier carousel{% endblock %}
+
+{% block body %}
+<section id='sectionAdhesion' style="margin-top:8%">
+<div class="container w-75 ">
+    <div class="profil my-5" id="formPersPhy">
+     {{ form_start(form) }}
+        <h3 class="mb-5 text-center">Modifier carousel</h3>
+        <div class="champ d-flex">
+                {{ form_row(form.type) }}
+            <div class="mx-3">
+                {{ form_row(form.titre) }}
+            </div>
+                {{ form_row(form.date) }}
+        </div>
+        
+        {{ form_row(form.auteur) }}
+
+        {% if newz.image %}
+            <div class="form-group ms-1 mb-3">
+                <label for="newz_image">Image actuelle :</label>
+                <img src="{{ asset('upload/' ~ newz.image) }}" alt="Miniature" class="img-thumbnail" style="max-width: 100px; max-height: 100px;">
+            </div>
+        {% endif %}
+
+        {{ form_row(form.image) }}
+        {{ form_row(form.contenu) }}
+    </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-success me-5">Mettre à jour le carousel</button>
+    {{ form_end(form) }}
+            <form method="post" action="{{ path('app_newz_delete', {'id': newz.id}) }}" onsubmit="return confirm('Êtes-vous sur de vouloir supprimer votre compte ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ newz.id) }}">
+                <button class="btn btn-danger ms-5">Supprimer le carousel</button>
+            </form>
+        </div>
+</div>
+</section>
+<style>
+    #formPersPhy input[type="file"] {
+        border: none;
+    }
+</style>
+{% endblock %}

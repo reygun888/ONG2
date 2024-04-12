@@ -1,0 +1,114 @@
+.sbar {
+    width: 10% !important;
+    background-color: #032B43 !important;
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+}
+
+.nmenu{
+    color: white !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.nmenu:hover {
+    color: orange !important; 
+    transform: scale(1.1);
+  }
+
+.main-content {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+}
+
+table tbody tr {
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+th{
+    font-size: large !important;
+    font-weight: bolder !important;
+    background-color: grey !important;
+    padding: 5px 1px 5px 10px !important;
+}
+
+td{
+    background-color: rgba(128, 128, 128, 0.253) !important;
+    padding: 5px 1px 5px 10px !important;
+}
+
+.dSearch{
+    width: 50% !important;
+}
+.aTable,
+.eTable{
+    width: 75% !important;
+}
+
+@media screen and (max-width: 1280px) {
+    .nmenu span {
+        display: none !important;
+    }
+
+    .nmenu i {
+        display: inline-block !important;
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 885px) {
+    .cdash{
+        width: 100% !important;
+    }
+    .nmenu span {
+        display: none;
+    }
+    .nmenu i {
+        font-size: small;
+    }
+    .dSearch{
+        width: 90% !important;
+    }
+    .main-content, .adh, .add, .ent {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .aTable {
+        width: 90% !important;
+        font-size: x-small !important;
+        font-weight: normal !important;
+    }
+
+    .eTable{
+        width: 90% !important;
+        font-size: x-small !important;
+    }
+
+    th{
+        font-size: x-small !important;
+    }
+    
+    .ico{
+        font-size: xx-small !important;
+        margin: 0% !important;
+        padding-left: 1% !important;
+
+    }
+
+    .tNom{
+        margin: 0 !important;
+        padding-left: 1% !important;
+    }
+
+    .visu{
+        font-size: xx-small !important;
+    }
+    
+    .visu2{
+        font-size: x-small !important;
+    }
+}

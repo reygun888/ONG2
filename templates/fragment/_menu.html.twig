@@ -1,0 +1,81 @@
+<header>
+<nav class="navbar navbar-expand-lg fixed-top ">
+    <div class="container-fluid">
+        <a class="navbar-brand me-auto" " href=" {{path('app_home')}} "">
+            <img src="{{asset("styles/img/logo/logo.png")}}" height="45" class="rounded-circle" alt="Logo" loading="lazy"/>
+        </a>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title mb-0 " id="offcanvasNavbarLabel">Les Amis du Monde</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 " aria-current="page" href="{{path('about_us')}}">A PROPOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" href="{{path('actualites')}}">ACTUALITES</a>
+					</li>
+                    {% if not app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="{{ path('app_adhesion') }}">ADHESION</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" href="{{path('app_contact')}}">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% if app.user %}
+        <div class="dropdown">
+            <label class="link-secondary me-3 dropdown-label" id='dropdownMenuLabel'>
+                <i class="fas fa-user text-white"></i>
+            </label>
+            <ul class="dropdown-menu" id='dropdownMenu'>
+                    {% if app.user %}
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a>
+                        </li>
+                    {% endif %}
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_user_index') }}">Jounal de bord</a>
+                        </li>
+                    {% if is_granted("ROLE_S_AD") %}
+                        <li>
+                            <a class="dropdown-item" href="{{ path('admin') }}">Dashboard</a>
+                        </li>
+                    {% endif %}
+                <li>
+                    <a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+        {% else %}
+        <a class="link-secondary me-3" href="{{ path('app_login') }}">
+            <i class="fas fa-user text-white"></i>
+        </a>
+        {% endif %}
+        <a href="{{ path("app_don") }}" id="bouton-don" class="btn  fw-bold">FAIRE UN DON</a>
+        <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownMenuLabel = document.getElementById('dropdownMenuLabel');
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownMenuLabel.addEventListener('click', function() {
+        if (dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+        } else {
+            dropdownMenu.style.display = 'block';
+        }
+    });
+});
+</script>

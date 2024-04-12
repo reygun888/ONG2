@@ -1,0 +1,46 @@
+<section class='art'>
+    <h2 class="my-3 text-center text-uppercase">Gerer les articles</h2>
+    <div class="adTable table-responsive-sm d-flex justify-content-center">
+        <table class="aTable table">
+            <thead class="">
+                <tr class="">
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th class='ico'></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <div class="desc">
+                    <td>{{ article.description|striptags|raw}}</td>
+                    </div>
+                    <td>{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
+                    <td>{{ article.titre }}</td>
+                    <td>{{ article.auteur }}</td>
+                    <td class="ico">
+                        <a class="btn btn-success py-1 px-2" href="{{path("update_article", {id: article.id})}}">
+                            <i class="visu2 fa-solid fa-pen-to-square"></i>
+                        </a>
+                        {% if is_granted('ROLE_S_AD') %}
+                        <a class="btn btn-primary py-1 px-2" href="{{path("new_article")}}">
+                            <i class="fa-solid fa-square-plus"></i>
+                        </a>
+                        <a class="btn btn-danger py-1 px-2" href="{{path("delete_article", {id: article.id})}}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun ajout trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <a href="{{ path('new_article') }}"class='d-flex justify-content-center'><span class="btn btn-warning"> + Ajouter un article </span></a>
+</section>  

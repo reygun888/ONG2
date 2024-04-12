@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+<div class="row">
+    <div class="col-2">
+    {% include 'fragment/_sidebar.html.twig'  %}
+    </div>
+    <div class="col-10">
+        <h1 class="titreh1 text-center mb-5 mt-5">GÉRER LES ARTICLES</h1>
+        <div class="text-center">
+            <a href="{{path("new_article")}}" class="btn btn-ajouter fw-bold
+            ">Ajouter un article</a>
+        </div>
+        <div class="table-container table-responsive">
+            <table class="table table-striped align-middle ">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, value in articles %}
+                    <tr>
+                        <td>{{value.id}}</td>
+                        <td>{{value.titre}}</td>
+                        <td>{{value.auteur}}</td>
+                        <td>{{value.date|date('d-m-Y')}}</td>
+                        <td>
+                            <a href="{{path("update_article", {id: value.id})}}", class="btn btn-modifier">Modifier</a>
+                            <a href="{{path("delete_article", {id: value.id})}}", class="btn btn-supprimer">Supprimer</a> 
+                        </td> 
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

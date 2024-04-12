@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carousel{% endblock %}
+
+{% block body %}
+<div class="container w-75">
+    <div class="Articles">
+        <h3 class="mb-5 text-center">Carousel</h3>
+        <div class="champ d-flex">
+            <h6 class="form-control"><strong> Type : </strong>{{ newz.type }}</h6>
+            <h6 class="form-control mx-3"><strong> Titre : </strong>{{ newz.titre }}</h6>
+        </div>
+        <div class="champ d-flex">
+            <h6 class="form-control me-2"><strong> Auteur : </strong>{{ newz.auteur }}</h6>
+            <h6 class="form-control ms-2"><strong> Date : </strong>{{ newz.date ? newz.date|date('Y-m-d') : '' }}</h6>
+        </div>
+        <h6 class="form-control"><strong> Image : </strong>{{ newz.image }}</h6>
+        <div class="form-group">
+            <label for="contenu"><strong>Contenu:</strong></label>
+            <textarea class="form-control" rows="5">{{ newz.contenu }}</textarea>
+        </div>
+        <div class="row">
+            <div class="my-3 d-flex justify-content-around">
+                <a class="b_mod btn "  href="{{ path('app_newz_edit', {'id': newz.id}) }}"><i class="fa-regular fa-pen-to-square me-1"></i>Modifier l'article</a>
+                <a class="b_mod btn " href="{{ path('app_user_index') }}"><i class="fa-solid fa-rotate-left"></i> Retour</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

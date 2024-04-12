@@ -1,0 +1,138 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block body %}
+    <div id="actualites-banner">  
+        <div>
+            <h1>NOS ACTUALITES</h1>
+            <p>lorem ipsum</p>
+        </div>
+    </div>
+
+    <div class="actualitesCardsWrapper text-center">
+        <div class="mt-5 mb-5">
+            <h2>Actualités</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, velit reprehenderit voluptatem sunt dolore illum.</p>
+        </div>
+        <div id="actualites">
+        <div class="container actualitesContainer" >
+                
+                
+            {% for article in articles %}
+                {% if loop.index % 2 == 1 %}
+                    </div><div class="row justify-content-center">
+                {% endif %}
+                
+                <div class="card " id="actualitesCard">
+                    <img class="card-img-sm-left " id="actualites-card-img" src="{{ asset('upload/' ~ article.image) }}"/>
+                    <div class="card-body" id="actualites-card-body">
+                        <h4 class="card-title h5 h4-sm">{{ article.titre }}</h4>
+                        <p class="card-text">{{ article.contenu|striptags|raw }}</p>
+                        <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-primary">Voir plus</a>  
+                    </div>
+                </div>
+
+            {% endfor %}
+            
+        
+        </div>
+    </div>
+
+    
+{% endblock %}
+
+
+
+
+
+
+{# templates/article/actualites.html.twig
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block body %}
+    <div id="actualites-banner">  
+        <div>
+            <h1>NOS ACTUALITES</h1>
+            <p>lorem ipsum</p>
+        </div>
+    </div>
+
+    <div class="actualitesCardsWrapper text-center">
+        <div>
+            <h2>Actualités</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, velit reprehenderit voluptatem sunt dolore illum.</p>
+        </div>
+
+        <div class="row"> 
+            {% for article in articles %}
+                {% if loop.index % 2 == 1 %}
+                    </div><div class="row justify-content-center">
+                {% endif %}
+
+                <div class="col-lg-4 col-md-6 col-sm-10  mx-1">
+                    <div class="card flex-row" id="actualitesCard">
+                        <img class="card-img-left actualites-card-img" src="{{ article.image }}"/>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.titre }}</h5>
+                            <p class=" card-text" id="text-card-actualites">{{ article.contenu }}</p>
+                            <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %} #}
+
+
+
+
+
+{# templates/article/actualites.html.twig
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block body %}
+    <div id="actualites-banner">  
+        <div>
+            <h1>NOS ACTUALITES</h1>
+            <p>lorem ipsum</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for article in articles %}
+        
+            {# <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.titre }}</h5>
+                        <p class="card-text">{{ article.contenu }}</p>
+                        <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-cards">Voir plus</a>
+                    </div>
+                </div>
+            </div> #}
+            {# <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src={{article.image}} alt="" class="custom-card-img rounded-start"/>
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.titre }}</h5>
+                <p class="card-text">{{ article.contenu }}</p>
+                <a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-cards">Voir plus</a>
+
+            </div>
+            </div>
+        </div>
+</div>
+        {% endfor %}
+    </div>
+{% endblock %} #} 

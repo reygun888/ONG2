@@ -1,0 +1,721 @@
+.bodyDivDon {
+    min-height: 100vh;
+    margin-bottom: 5% !important;
+    padding-top: 1%;
+}
+
+/* Section Don */
+
+.sectionContainerDon {
+    display: flex;
+    justify-content: center;
+    margin-top: 5% !important;
+    width: 98%;
+    flex-wrap: wrap;
+}
+
+.monDon {
+    margin-right: 5%;
+    width: 25%;
+}
+
+.monDonBody {
+    height: 30vh !important;
+    background-color: white;
+    padding-top: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.mesCordonnees {
+    margin-right: 5%;
+    width: 25%;
+}
+
+
+.headDivsDon {
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    background-color: #FFC53D;
+    justify-content: center;
+    color: #00749E;
+}
+
+
+.divBtnDonFreq {
+    border: 3px solid #60B3D7;
+    border-radius: 7px;
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.monDon button {
+    border: 0;
+    width: 100%;
+    height: 30px !important;
+    font-size: 12px;
+    background-color: white;
+    color: #00749E;
+}
+
+.checkedFreqDon {
+    background-color: #60B3D7 !important;
+    color: white !important;
+}
+
+.prixDon {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.prixDon button {
+    border: 3px solid #60B3D7;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.donMontantLibre {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.donMontantLibre input {
+    margin-top: 10%;
+    margin-bottom: 3%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid #60B3D7;
+    color: #113264;
+    width: 80%;
+}
+
+.donMontantLibre input:focus {
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+.donValeur:hover {
+    background-color: #60B3D7 !important;
+    color: white !important;
+}
+
+/* Section Coordonnées */
+
+.mesCoordonneesBody {
+    height: 90vh !important;
+    background-color: white;
+}
+
+.monReglement {
+    width: 25%;
+}
+
+.toggleDivCoor {
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 10%;
+}
+
+.switchCoor {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .switchCoor input {
+    position: absolute;
+    top: -30px;
+    top: -30px;
+    width: 0;
+    height: 0;
+  }
+  .switchCoor input + span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #99b4df;
+    border-radius: 20px;
+  }
+  .switchCoor input + span:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all .5s;
+  }
+  .switchCoor input:checked + span {
+    background: #346abf;
+  }
+  .switchCoor input:checked + span:before {
+    left: 15px;
+  }
+
+#textSwitch{
+    font-size: 13px;
+    margin-left: 5%;
+}
+
+.switchFormSoc, .switchFormPers{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.switchFormSoc p, .switchFormPers p{
+    font-size: 12px;
+    margin-top: 3%;
+}
+
+.hiddenSwitch{
+    display: none;
+}
+
+.switchFormSoc input, .switchFormPers input{
+    margin-bottom: 5%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 100%;
+}
+
+
+.switchFormSoc input::placeholder, .switchFormPers input::placeholder {
+    color: rgb(163, 163, 163);
+}
+
+.switchFormSoc input:focus, .switchFormPers input:focus{
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+
+.civiliteDon {
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    margin-bottom: 5%;
+}
+
+.civiliteDon:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.selectPaysDon, .selectPaysDonSoc {
+    width: 100% !important;
+    margin-bottom: 5%;
+    height: 30px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+}
+
+.selectPaysDon:focus, .selectPaysDonSoc:focus{
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+/* Section paiement */
+.monReglementBody {
+    height: 80vh !important;
+    background-color: white;
+}
+
+#paiementSecuriseDon{
+    width: 90%;
+    margin-left: 5%;
+    font-size: 10px;
+    padding-top: 10%;
+    margin-bottom: 10%;
+}
+
+#paiementSecuriseDon p{
+    text-align: center!important;
+}
+
+.moyenDonSection{
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+.moyenPaiementDivDon i{
+    font-size: 30px;
+    color: rgb(163, 163, 163);
+}
+
+.moyenPaiementDivDon p{
+    font-size: 10px;
+    margin-top: 3%;
+    color: gray;
+}
+
+.moyenPaiementDivDon button{
+    border: 0;
+    background-color: white;
+}
+
+.moyenSousDivDon{
+    margin-right:5%;
+}
+
+.moyenCheckedDivDon button{
+    border-bottom: 3px solid #60B3D7;
+}
+
+.moyenCheckedDivDon p, .moyenCheckedDivDon i{
+    color: #60B3D7!important;
+}
+
+#sectionVMCDon img{
+    width: 65%;
+}
+
+#sectionVMCDon {
+    justify-content: center;
+    width: 90%;
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+#sectionVMCDon div {
+    text-align: center;
+    width: 25%;
+}
+
+#sectionVMCDon label {
+    display: block; 
+    margin-bottom: 5px;
+}
+
+#sectionVMCDon input[type="radio"] {
+    display: block; 
+    margin: 0 auto;
+}
+
+
+.cardNumberCotisationDon{
+    margin-bottom: 3%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 60%;
+}
+
+.nomCarteCotisationDon{
+    margin-bottom: 3%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 90%;  
+}
+
+.codeCardCotisationDon{
+    margin-bottom: 3%;
+    margin-left: 2%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 30%;
+}
+
+#sectionCardInfoDon{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#sectionCardInfoDon input::placeholder {
+    color: rgb(163, 163, 163);
+}
+
+#sectionCardInfoDon input:focus {
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+.moisCotisationDon {
+    width: 40%;
+    height: 30px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color:#113264;
+    margin-bottom: 3%;
+    margin-right: 12%;
+}
+
+.moisCotisationDon:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.anneeCotisationDon {
+    width: 40%;
+    margin-bottom: 3%;
+    height: 30px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color:#113264;
+}
+
+.anneeCotisationDon:focus{
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.validationAdhesionDon{
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    background-color:var(--bouton-don);
+    color: white;
+    padding: 4px;
+    border: 0;
+}
+
+.validationAdhesionDon:hover{
+    background-color: #E2A336!important;
+}
+
+/* Don matériel */
+
+#sectionDonMateriel{
+    height: 60vh;
+    background-color: white;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.headDonMateriel{
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    background-color: #FFC53D;
+    justify-content: center;
+    color: #00749E;
+    width: 100%;
+}
+
+.bodyDonMateriel p {
+    margin-top: 2%;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.bodyDonMateriel input{
+    margin-bottom: 2%;
+    height: 35px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+.bodyDonMateriel input::placeholder{
+    color: rgb(163, 163, 163);
+}
+
+.bodyDonMateriel input:focus{
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+
+.civiliteDonMateriel {
+    height: 35px;
+    width: 25%;
+    margin-left: 25%;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    margin-bottom: 2%;
+}
+
+.civiliteDonMateriel:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.validationDonMateriel{
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 30%!important;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    background-color:var(--bouton-don)!important;
+    color: white;
+    padding: 4px;
+    border: 0;
+}
+
+.validationDonMateriel:hover{
+    background-color: #E2A336!important;
+}
+
+/* Media queries */
+@media screen and (max-width: 992px) {
+
+    .sectionContainerDon{
+        margin: 0;
+        width: 100%;
+    }
+
+    .monDon,
+    .mesCordonnees,
+    .monReglement {
+      margin-bottom: 10%;
+      height: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .monDonBody{
+    height:60vh!important;
+    }
+
+    .mesCoordonneesBody{
+        height: 100vh!important;
+        overflow: scroll;
+    }
+
+    .monReglementBody{
+        height: 100vh!important;
+        overflow: scroll;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .sectionContainerDon{
+        margin: 0;
+        width: 100%;
+    }
+
+    .monDon,
+    .mesCordonnees,
+    .monReglement {
+      margin-bottom: 10%;
+      height: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .monDonBody{
+    height:40vh!important;
+    }
+
+    .mesCoordonneesBody{
+        height: 100vh!important;
+    }
+
+    .monReglementBody{
+        height: 100vh!important;
+    }
+  }
+  
+  
+  @media screen and (max-width: 576px) {
+
+    .sectionContainerDon{
+        margin: 0;
+        width: 100%;
+    }
+
+    .monDon,
+    .mesCordonnees,
+    .monReglement {
+      margin-bottom: 10%;
+      height: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .monDonBody{
+    height:40vh!important;
+    }
+
+    .mesCoordonneesBody{
+        height: 90vh!important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+  
+    .sectionContainerDon {
+      margin: 0;
+      width: 100%;
+    }
+  
+    .monDon,
+    .mesCordonnees,
+    .monReglement {
+      margin-bottom: 10%;
+      height: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .monDonBody {
+      height: 40vh !important;
+    }
+  
+    .mesCoordonneesBody {
+      height: 90vh !important;
+    }
+    
+    .switchFormSoc input, .switchFormPers input{
+        margin-bottom: 2%;
+        font-size: 10px;
+        height: 20px;
+        border: 1px solid #60B3D7;
+    }
+    
+    .switchFormSoc input:focus, .switchFormPers input:focus{
+        border: 1px solid #1D3E56;
+        outline: none;
+    }
+
+    .civiliteDon {
+        margin-bottom: 2%;
+        font-size: 10px;
+        height: 20px;
+        border: 1px solid #60B3D7;
+    }
+    
+    .civiliteDon:focus {
+        border: 1px solid #1D3E56;
+    }
+    
+    .selectPaysDon, .selectPaysDonSoc {
+        margin-bottom: 2%;
+        font-size: 10px;
+        height: 20px;
+        border: 1px solid #60B3D7;
+    }
+    
+    .selectPaysDon:focus, .selectPaysDonSoc:focus{
+        border: 1px solid #1D3E56;
+    }
+
+
+.cardNumberCotisationDon{
+    font-size: 10px;
+    margin-bottom: 1%;
+    height: 20px;
+    border: 1px solid #60B3D7;
+}
+
+.nomCarteCotisationDon{
+    font-size: 10px;
+    margin-bottom: 1%;
+    height: 20px;
+    border: 1px solid #60B3D7; 
+}
+
+.codeCardCotisationDon{
+    font-size: 10px;
+    margin-bottom: 1%;
+    height: 20px;
+    border: 1px solid #60B3D7;
+}
+
+#sectionCardInfoDon{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#sectionCardInfoDon input:focus {
+    border: 1px solid #1D3E56;
+}
+
+.moisCotisationDon {
+    font-size: 10px;
+    margin-bottom: 1%;
+    height: 20px;
+    border: 1px solid #60B3D7;
+}
+
+.moisCotisationDon:focus {
+    outline: none;
+    border: 1px solid #1D3E56;
+}
+
+.anneeCotisationDon {
+    font-size: 10px;
+    margin-bottom: 1%;
+    height: 20px;
+    border: 1px solid #60B3D7;
+}
+
+.anneeCotisationDon:focus{
+    border: 1px solid #1D3E56;
+}
+
+.validationAdhesionDon{
+    width: 30%;
+    font-size: 12px;
+}
+
+  }
+
+  @media screen and (max-width: 320px) {
+
+    
+      .sectionContainerDon {
+        margin: 0;
+        width: 100%;
+      }
+    
+      .monDon,
+      .mesCordonnees,
+      .monReglement {
+        margin-bottom: 10%;
+        height: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    
+      .monDonBody {
+        height: 60vh !important;
+      }
+    
+      .mesCoordonneesBody {
+        height: 100vh !important;
+      }
+
+      .monReglementBody{
+        height: 100vh!important;
+      }  
+  }

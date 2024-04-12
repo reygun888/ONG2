@@ -1,0 +1,54 @@
+:root { 
+    --footer-1-color: #78a3b1; 
+    --footer-2-color: #032B43 ; 
+    --bouton-don: #FFC436; 
+    --bouton-autre: #F88600; 
+    --text-1: #ffff; 
+    --text-2: #A1A1A1; 
+}
+
+.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.profil{
+    width: 50%;
+}
+
+.b_mod,
+.baddress,
+.bdon{
+    background-color: #032B43 !important;
+    color: white !important;
+}
+
+h6.form-control{
+    border: 1px solid #032B43 !important;
+    border-radius: 10px !important;
+    margin-bottom: 30px !important;
+}
+
+.E_ville{
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+@media screen and (max-width: 485px) {
+    .profil {
+       width: 100% !important;
+    }
+    .show {
+        height: auto !important;
+    }
+    @media (max-width: 485px) {
+        .E_ville {
+            margin-left: 0 !important ;
+            margin-right: 0 !important;
+        }
+    }
+}
+

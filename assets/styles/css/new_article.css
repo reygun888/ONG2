@@ -1,0 +1,62 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+}
+
+.titre_new{
+
+        font-size: 30px;
+        color: #032B43;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .titre_new {
+            font-size: 20px; 
+        }
+    }
+
+    .articleForm {
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        margin-top: 20px;
+    }
+    
+
+    .articleForm input[type="text"],
+    .articleForm input[type="date"],
+    .articleForm textarea,
+    .articleForm select {
+        width: calc(100% - 20px); /* Calculer la largeur en fonction de la taille du conteneur, moins un espace de 20px sur les côtés */
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 2px solid var(--footer-1-color);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+
+.articleForm .submit-button button[type="submit"] {
+    background-color: var(--bouton-autre);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.articleForm .submit-button button[type="submit"]:hover {
+    background-color:rgb(237, 132, 4) ;
+}
+
+
+

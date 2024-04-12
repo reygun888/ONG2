@@ -1,0 +1,20 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+}
+.newsletters{
+    background-color: #f4f4f4;
+}
+
+#form-newsletter {
+    background-color: white;
+    border: 2px solid var(--footer-1-color); 
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+

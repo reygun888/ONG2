@@ -1,0 +1,45 @@
+
+<section class='cus'>
+    <h2 class="my-3 text-center text-uppercase">Gerer le carousel</h2>
+    <div class="adTable table-responsive-sm d-flex justify-content-center">
+        <table class="aTable table">
+            <thead class="">
+                <tr class="">
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Auteur</th>
+                    <th>Image</th>
+                    <th class='ico'></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for newz in newzs %}
+                <tr>
+                    <td>{{ newz.type }}</td>
+                    <td>{{ newz.date ? newz.date|date('Y-m-d') : '' }}</td>
+                    <td>{{ newz.auteur }}</td>
+                    <td>
+                        {% if newz.image %}
+                            <img src="{{ asset('upload/' ~ newz.image) }}" alt="Miniature" class="img-thumbnail" style="max-width: 50px; max-height: 50px;">
+                        {% endif %}
+                    </td>
+                    <td class="ico">
+                        <a class="btn btn-success py-1 px-2" href="{{ path('app_newz_edit', {'id': newz.id}) }}">
+                            <i class="visu2 fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a class="btn btn-danger py-1 px-2" href="{{ path('app_newz_delete', {'id': newz.id}) }}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun ajout trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <a href="{{ path('app_newz_new') }}"class='d-flex justify-content-center'><span class="btn btn-warning"> + Ajouter un carousel </span></a>
+    <hr>    
+</section>

@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1 class="titre_new text-center">Ajouter un article</h1>
+    
+    <div class="articleForm d-flex justify-content-center">
+        <div class="w-75">
+        {{ form_start(form) }}
+            <div>{{form_row(form.titre)}}</div>
+            <div>{{form_row(form.auteur)}}</div>
+            <div>{{form_row(form.date)}}</div>
+            <div>{{form_row(form.description)}}</div>
+            <div>{{form_row(form.contenu)}}</div>
+            <div>{{form_row(form.image)}}</div>
+
+        <div class="submit-button text-center" >
+        {{ form_end(form) }}
+        </div>   
+        </div>          
+    </div> 
+
+{% endblock %}

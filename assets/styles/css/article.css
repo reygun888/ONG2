@@ -1,0 +1,71 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+}
+
+.btn-ajouter{
+    background-color: var(--bouton-autre) !important;
+    color: var(--text-1) !important;
+    margin-bottom: 50px;
+   
+    
+}
+.btn-modifier{
+    background-color: rgb(26, 176, 6) !important;
+    color: var(--text-1) !important;
+}
+
+.btn-supprimer{
+    background-color: #f02e2e !important;
+    color: var(--text-1) !important;
+}
+
+.titreh1 {
+    font-size: 30px;
+    color: #032B43;
+}
+
+@media only screen and (max-width: 768px) {
+    .titreh1 {
+        font-size: 20px; 
+    }
+}
+
+
+td img{
+    height:50px ;
+    width: 70px;
+}
+
+
+/* Style pour les cellules de l'en-tête */
+.table th {
+    padding: 8px;
+    text-align: center;
+    color: black !important;
+    border-bottom: 1px solid #ffffff;
+}
+
+.table-container {
+    margin-right: 4%; 
+    margin-left: auto; /* Marge automatique sur le côté gauche pour centrer le tableau */
+}
+
+
+/* Style pour les lignes de données */
+.table td {
+    padding: 8px;
+    border-bottom: 1px solid #ffff;
+    text-align: center;
+    
+}
+
+
+/* Style pour les boutons dans la dernière colonne */
+.table td a {
+    margin-right: 5px;
+}

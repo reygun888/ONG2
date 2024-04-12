@@ -1,0 +1,215 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+
+}
+
+
+* {
+    font-family: 'Tahoma', sans-serif;
+    box-sizing: content-box;
+
+}
+
+
+#bouton-don:hover {
+    box-shadow: 0 0 10px rgba(251, 182, 32, 0.8); /* Ajout d'une ombre au survol */
+}
+
+#bouton-autre{
+    background-color: var(--bouton-autre);
+    color:var(--footer-1-color);
+}
+
+#navbar{
+    background-color: var(--footer-2-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-1); 
+
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--footer-1-color); 
+
+}
+/* CSS pour le bouton */
+.btn-floating {
+    background-color:var(--footer-1-color); /* Définir la couleur du bouton en blanc */
+    transition: color 0.3s; /* Ajouter une transition pour la couleur */
+}
+
+/* CSS pour les icônes */
+.btn-floating i {
+    color: var(--footer-1-color) /* Définir la couleur de l'icône en blanc */
+}
+
+/* CSS pour les icônes lors du survol */
+.btn-floating:hover i {
+    color: var(--footer-2-color); /* Changer la couleur de l'icône en bleu lors du survol */
+}
+
+.vl {
+    width: 2px;
+    height: 180px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px; 
+}
+.historique{
+    color:  rgb(255, 255, 255, 0.5);
+}
+.footer-1-link{
+    color: var(--text-1);
+    font-weight: bolder;
+}
+
+.footer-1-link:hover{ 
+    color: var(--footer-1-color)
+}
+
+.footer-2-link{
+    color: var(--text-1);
+}
+
+.footer-2-link:hover{ 
+    color: var(--footer-2-color);
+}
+#footer-1{
+    background-color: var(--footer-2-color) ;
+    color: var(--text-1);
+}
+
+#footer-2{
+    background-color: var(--footer-1-color);
+    color: var(--text-1);
+}
+
+
+#bouton-autre{
+    background-color: var(--bouton-autre);
+    color: var(--footer-2-color);
+}
+
+/* Je réinitialise pour éviter la marge à droite */
+.row{
+    --mdb-gutter-x : none!important;
+}
+
+#bouton-don{
+    background-color: var(--bouton-don);
+    color: var(--text-1);
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: 0.3s background-color;
+}
+
+#bouton-don:hover {
+    background-color: #f7b80e;
+}
+
+.navbar-toggler{
+    border: none !important;
+    font-size: 1.25rem !important;
+    
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
+}
+
+.nav-link {
+    color: var(--text-1) !important; 
+    font-weight: 500 !important;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--footer-1-color) !important; 
+
+} 
+
+.navbar{
+    background-color: var(--footer-2-color) !important;
+   
+}
+
+.offcanvas{
+    background-color: var(--footer-2-color) !important;
+}
+
+.offcanvas-title{
+    color: var(--text-1) !important; 
+
+}
+
+
+.btn-close {
+    --mdb-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e")
+    !important; 
+    --mdb-btn-close-color: white !important;
+    margin-left: 0.2 !important;
+}
+
+.offcanvas-header .btn-close {
+    position: absolute;
+    top: 25px; 
+    right: 15px; 
+  }
+  .offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+header{
+    margin-bottom: 70px;
+}
+
+.navbar-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-nav {
+        top: 20%;
+        left: 20%;
+        transform: translate(-20%, -20%);
+    }
+}
+
+.dropdown-label {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.footerh2{
+    font-size: 25px;
+}
+
+.linksFooter a{
+    font-size: 13px!important;
+}

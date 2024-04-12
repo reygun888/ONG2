@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+<div class="edit container ">
+    <div class="profil my-5">
+     {{ form_start(form) }}
+        <h3 class="mb-5 text-center">Modifier profil</h3>
+        
+            {% if is_granted("ROLE_ADMIN")or is_granted("ROLE_S_AD") %}
+                {{ form_row(form.roles) }}
+            <hr>
+            {% endif %}
+            {{ form_row(form.type) }}
+            <hr>
+            {% if form.civilite is defined %}
+            <div class="champ d-flex">
+            <div class="civ">
+                {{ form_row(form.civilite) }}
+            </div>
+                {% endif %}
+            {% if form.prenom is defined %}
+                {{ form_row(form.prenom) }}
+            </div>
+            <hr>
+            {% endif %}
+            {% if form.siren is defined %}
+            <div class="champ d-flex">
+            <div class="sir">
+                {{ form_row(form.siren) }}
+            </div>
+                {% endif %}
+            {% if form.formeJuridique is defined %}
+                {{ form_row(form.formeJuridique) }}
+            </div>
+            <hr>
+            {% endif %}
+                {{ form_row(form.nom) }}
+            <hr>
+                {{ form_row(form.email) }}
+            <hr>
+                {{ form_row(form.telephone) }}
+            <hr>
+                {{ form_row(form.adresse) }}
+            <hr>
+                {{ form_row(form.complementAdresse) }}
+            <hr>
+                {{ form_row(form.codePostal) }}
+            <hr>
+                {{ form_row(form.ville) }}
+            <hr>
+                {{ form_row(form.pays) }}
+
+        <h3 class="text-center my-5">Modifier mot de passe</h3>
+            <div class="">
+                {{ form_row(form.oldPassword) }}
+                {{ form_row(form.plainPassword.first) }}
+                {{ form_row(form.plainPassword.second) }}
+            </div>
+
+            {# affiche tous les champs restants du formulaire, y compris le champ CSRF #}
+            {{ form_rest(form) }}
+
+        <div class="row">
+            <div class="d-flex justify-content-around mt-3">
+                    <button type="submit" class="btn btn-success">Mettre à jour le profil</button>
+                     {{ form_end(form) }}
+                <form method="post" action="{{ path('app_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sur de vouloir supprimer votre compte ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                    <button class="btn btn-danger">Supprimer mon compte</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

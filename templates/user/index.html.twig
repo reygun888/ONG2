@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index Général{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success mt-4">
+        {{ message }}
+    </div>
+{% endfor %}
+<div class="cdash container-fluid" style="--mdb-gutter-x:none">
+    <div class="row flex-nowrap">
+        <div class="sbar col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+            <div class="smenu d-flex flex-column align-items-center align-items-sm-start px-3 pt-2">
+                <ul class="nav nav-pills flex-column align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nmenu nav-link align-middle px-0">
+                            <i class="fa-solid fa-house"></i><span class="ms-1 d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    {% if is_granted('ROLE_S_AD') %}
+                    <li>
+                        <a href="{{ path('app_user_index') }}"class="nmenu nav-link px-0 align-middle">
+                            <i class="fa-solid fa-indent"></i><span class="ms-1 d-sm-inline">Index</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nmenu nav-link px-0 align-middle">
+                            <i class="fa-solid fa-user"></i><span class="ms-1 d-sm-inline">Membres</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nmenu nav-link px-0 align-middle filter-type" data-type="adherent">
+                            <i class="fa-solid fa-user"></i><span class="ms-1 d-sm-inline">Adhérents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nmenu nav-link px-0 align-middle filter-type" data-type="entreprise">
+                            <i class="fa-solid fa-building"></i><span class="ms-1 d-sm-inline">Entreprises</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#submenu3"class="nmenu nav-link px-0 align-middle">
+                            <i class="fa-solid fa-palette"></i><span class="ms-1 d-sm-inline">Custom</span> </a>
+                    </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_S_AD') or is_granted('ROLE_ADMIN') %}
+                    <li>
+                        <a href="#submenu2" class="nmenu nav-link px-0 align-middle ">
+                            <i class="fa-solid fa-newspaper"></i><span class="ms-1 d-sm-inline">Articles</span></a>
+                    </li>
+                    {% endif %}
+                     <li>
+                        <a href="#submenu3"class="nmenu nav-link px-0 align-middle">
+                            <i class="fa-solid fa-hand-holding-dollar"></i><span class="ms-1 d-sm-inline">Mes Dons</span> </a>
+                    </li>
+                    <li>
+                        <a href="#submenu3"class="nmenu nav-link px-0 align-middle">
+                            <i class="fa-solid fa-bookmark"></i><span class="ms-1 d-sm-inline">Mon Statut</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3">
+            <section class="main-content">
+                <h1 class='text-center mb-5'>Journal de bord</h1>
+                <form action="{{ path('app_search') }}" method="GET" class="d-flex justify-content-center">
+                    <div class="dSearch input-group mb-3">
+                        <input type="text" class="form-control" name="q" placeholder="Rechercher...">
+                        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+                {% if is_granted('ROLE_S_AD') %}
+                    {% include 'user/tabBord.html.twig'%} 
+                    {% include 'newz/index.html.twig'  %}
+                {% endif %}
+                {% if is_granted('ROLE_S_AD') or is_granted('ROLE_ADMIN') %}
+                    {% include 'article/tabBord.html.twig'  %}
+                {% endif %}
+                <section class='don'>
+                    <h2 class="my-3 text-center text-uppercase">Gerer les Dons</h2>
+                    <div class="adTable table-responsive-sm d-flex justify-content-center">
+                    <h3> <i class="fa-solid fa-person-digging"></i> En attente du CRUD </h3>
+                    </div>
+                    <hr>
+                </section>
+                <section class='for'>
+                    <h2 class="my-3 text-center text-uppercase">Gerer les Forfaits</h2>
+                    <div class="adTable table-responsive-sm d-flex justify-content-center">
+                    <h3> <i class="fa-solid fa-person-digging"></i> En attente du CRUD </h3>
+                    </div>
+                    <hr>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+document.querySelectorAll('.filter-type').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const type = this.dataset.type;
+        const form = document.querySelector('form[action="{{ path('app_search') }}"]');
+        const input = document.createElement('input');
+        // const input = form.querySelector('input[name="type"]');
+
+        input.type = 'hidden';
+        input.name = 'type';
+        input.value = type;
+
+        form.appendChild(input);
+        form.submit();
+    });
+});
+</script>
+{% endblock %}

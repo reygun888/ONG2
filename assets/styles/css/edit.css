@@ -1,0 +1,35 @@
+.edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mdp{
+    border: none;
+    border-radius: 5px;
+    padding: 2px 2px 2px 10px !important;
+    background-color: rgba(128, 128, 128, 0.069);
+}
+/* #user_edit_roles{
+    width: 50%;
+    margin-left: 5%;
+} */
+@media screen and (max-width: 485px) {
+    .edit{
+       width: 100% !important;
+    }
+
+@media (max-width: 485px) {
+    .champ {
+        flex-direction: column !important;
+    }
+
+    .champ .enom,
+    .sir,
+    .civ {
+        margin-bottom: 1% !important;
+    }
+
+}
+
+}

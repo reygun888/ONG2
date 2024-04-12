@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+{% block title %}connexion{% endblock %}
+
+{% block body %}
+<div class="logT text-center container">
+    <h3 class="tlog my-4"> SOYEZ LES PREMIERS INFORMÉS DE NOS ACTIONS </h3>
+    <p>Votre adresse de messagerie est utilisée pour vous envoyer les lettres d'information d'AMIS DU MONDE.
+    <br>
+    Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans la newsletter.</p>
+</div>
+<form method="post" class="log my-5">
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    
+<div class="login card container my-3 text-center">
+    <div class="card-body p-3">
+        <h1 class="lTitre my-3 font-weight-normal">Se connecter</h1>
+    {# <div>
+        <input type="checkbox" id="entity_type" name="entity_type" value="entreprise">
+        <label for="entity_type">Se connecter en tant qu'entreprise</label>
+    </div> #}
+        <label for="inputEmail" class='my-3'>Email</label>
+        <div class="form-group mx-auto w-50">
+            <input type="email" value="{{ last_username }}"name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        </div>
+        <label for="inputPassword" class='my-3'>Mot de passe</label>
+        <div class="form-group mx-auto w-50">
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        </div>
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
+
+        <div class="checkbox my-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Se rappeler de moi
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-warning" type="submit">
+            Se connecter
+        </button>
+    </div>
+         <p>Vous avez oublié votre mot de passe?
+         <a href="{{path('mdp_oublie')}}" class="log text-white">Cliquez ici</a>
+         </p>
+</div>
+</form>
+
+<style>
+body{
+    /* min-height: 100vh;
+    background-image: radial-gradient(#e5e5e5 1px, transparent 1px), radial-gradient(#e5e5e5 1px, transparent 1px);
+    background-size: 26px 26px;
+    background-position: 0 0, 13px 13px;
+    background-color: #ffffff;
+    position: relative;
+    box-sizing: border-box; */
+
+    min-height: 100vh;
+    background-image: url({{ asset('styles/img/hands.jpeg') }});
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: relative;
+    box-sizing: border-box;
+}
+</style>
+{% endblock %}
+

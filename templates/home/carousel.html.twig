@@ -1,0 +1,28 @@
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+        {% for newz in newzs %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <img class="d-block w-100 image-carrousel" src="{{ asset('upload/' ~ newz.image) }}" alt="{{ newz.titre }}">
+                <div class="carousel-caption d-none d-md-block custom-carousel-caption">
+                    <h4 class="text" style="white-space: pre-line;">{{ newz.contenu|raw }}</h4>
+                    {% if newz.type == 'Don' %}
+                        <a href="{{ path("app_don") }}" id="bouton-don" class="btn btn-warning btn-lg">FAIRE UN DON</a>
+                    {% elseif newz.type == 'article' %}
+                        <a href="{{ path("actualites")}}" id="bouton-act" class="btn btn-primary btn-lg">VOIR LES ACTUALITES</a>
+                    {% elseif newz.type == 'autre' %}
+                        <a href="#" id="bouton-autre" class="btn btn-secondary btn-lg">AUTRE ACTION</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+

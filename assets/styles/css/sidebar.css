@@ -1,0 +1,70 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: flex-start
+}
+
+.sidebar {
+    height: 100vh; /* 100% de la hauteur de la vue (viewport) */
+    width: 80%; /* Largeur de la barre de navigation */
+    background-color:var(--footer-2-color) ; /* Couleur de fond de la barre de navigation */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.content {
+    flex-grow: 1; /* Permet au contenu principal de prendre toute la largeur restante */
+    padding: 20px; /* Ajoute un espacement pour le contenu principal */
+}
+
+.side a {
+    color: var(--text-1);
+    margin-bottom: 10px; /* Espacement entre les liens */
+    text-align: center;
+    display: block; /* Assure que chaque lien occupe une ligne */
+    margin-bottom: 40px; 
+    margin-top: 20px;
+    font-size: 16px; /* Taille de police par défaut */
+
+}
+
+@media only screen and (max-width: 768px) {
+    .side a {
+        font-size: 14px; /* Réduire la taille de police sur les petits écrans */
+    }
+}
+
+.sidebar a:hover, .side a.active {
+    color: var(--bouton-autre);
+}
+
+.side a {
+    /* Vos styles existants */
+    font-size: 14px; /* Taille de police par défaut */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .side a {
+        font-size: 8px; /* Réduire la taille de police sur les petits écrans */
+    }
+}
+
+.sidebar {
+    /* Vos styles existants */
+    width: 80%; /* Ajustez la largeur de la barre latérale si nécessaire */
+    overflow: hidden; /* Cacher le contenu qui dépasse */
+}
+
+

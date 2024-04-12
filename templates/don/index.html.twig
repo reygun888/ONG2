@@ -1,0 +1,200 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Don
+{% endblock %}
+
+{% block body %}
+	<div class="bodyDivDon">
+		<section class="sectionContainerDon d-flex justify-content-center">
+			<section class="monDon">
+				<div class="headMonDon headDivsDon">1. Mon don</div>
+				<div class="monDonBody">
+					<div class="divBtnDonFreq">
+						<button id="paiementUneFois" class="btnFreqDon checkedFreqDon paiementUneFois">Je donne une fois</button>
+						<button id="paiementParMois" class="btnFreqDon paiementParMois">Je donne chaque mois</button>
+					</div>
+
+					<div class="prixDon d-flex mt-4 justify-content-between">
+						<button class="don1 donValeur" data-value="10">10 €</button>
+						<button class="don2 donValeur" data-value="20">20 €</button>
+						<button class="don3 donValeur" data-value="30">30 €</button>
+						<button class="don4 donValeur" data-value="50">50 €</button>
+					</div>
+
+					<div class="donMontantLibre">
+						<input type="text" class="inputMontantLibre" name="donMontantLibre" placeholder="Montant libre">
+						<span>&euro;</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="mesCordonnees">
+				<div class="headMesCoordonnees headDivsDon">2. Mes coordonnées
+				</div>
+				<div class="mesCoordonneesBody">
+					<div class="toggleDivCoor d-flex">
+						<label class="switchCoor">
+							<input id="switchCheck" type="checkbox"/>
+							<span></span>
+						</label>
+						<label for="switchCoor" id="textSwitch">Je fais un don au nom d'une organisation ou d'une société.</label>
+					</div>
+
+					<div class="switchFormPers pt-3">
+						<select name="civiliteDon" class="civiliteDon">
+							<option value="" selected disabled>Civilité *</option>
+							<option value="m">M</option>
+							<option value="mme">Mme</option>
+							<option value="autre">Autre</option>
+						</select>
+						<input type="text" class="nomDon" placeholder="Nom *">
+						<input type="text" class="prenomDon" placeholder="Prénom *">
+						<input type="text" name="adresseDon" class="adresseDon" placeholder="Adresse *">
+						<input type="text" name="complementAdresseDon" class="complementAdresseDon" placeholder="Complément d'adresse">
+						<input type="number" name="codePostalDon" class="codePostalDon" placeholder="Code postal *">
+						<select name="selectPaysDon" class="selectPaysDon">
+							<option value="" selected disabled>Pays *</option>
+							<option value="france">France</option>
+						</select>
+						<input type="number" name="telDon" class="telDon" placeholder="Téléphone">
+						<input type="email" name="emailDon" class="emailDon" placeholder="Email">
+						<label for="dateDeNaissanceDon">Date de naissance</label><br>
+						<input type="date" name="dateDeNaissanceDon" class="dateDeNaissanceDon">
+						<p>* Champs obligatoires (ces informations sont indispensables pour bénéficier de votre réduction fiscale)</p>
+					</div>
+
+					<div class="switchFormSoc hiddenSwitch pt-3">
+						<input type="text" name="raisonSocialeDon" class="raisonSocialeDon" placeholder="Raison sociale">
+						<input type="text" name="formeJuridiqueDon" class="formeJuridiqueDon" placeholder="Forme juridique">
+						<input type="text" name="sirenDonSoc" class="sirenDonSoc" placeholder="SIREN">
+						<input type="text" name="adresseDonSoc" class="adresseDonSoc" placeholder="Adresse *">
+						<input type="text" name="complementAdresseDon" class="complementAdresseDonSoc" placeholder="Complément d'adresse">
+						<input type="number" name="codePostalDonSoc" class="codePostalDonSoc" placeholder="Code postal *">
+						<select name="selectPaysDonSoc" class="selectPaysDonSoc">
+							<option value="" selected disabled>Pays *</option>
+							<option value="france">France</option>
+						</select>
+						<input type="number" name="telDonSoc" class="telDonSoc" placeholder="Téléphone">
+						<input type="email" name="emailDon" class="emailDon" placeholder="Email">
+
+						<p>* Champs obligatoires (ces informations sont indispensables pour bénéficier de votre réduction fiscale)</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="monReglement">
+				<div class="headMonReglement headDivsDon">3. Paiement
+				</div>
+				<div class="monReglementBody">
+					<section id="paiementSecuriseDon">
+						<p>Paiements hautement sécurisés grâce à la méthode de cryptage SSL 256 bits, la norme de sécurité la plus élevée.</p>
+					</section>
+					<section class="moyenDonSection">
+						<div class="d-flex moyenPaiementDivDon justify-content-center">
+							<div class="text-center moyenSousDivDon moyenCheckedDivDon">
+								<button class="btnMoyenDon">
+									<i class="fa-regular fa-credit-card"></i><br><p>Payer par carte bancaire
+									</p>
+								</button>
+							</div>
+							<div class="text-center moyenSousDivDon">
+								<button class="btnMoyenDon">
+									<i class="fa-solid fa-building-columns"></i><br><p>
+										Payer par prélèvement
+									</p>
+								</button>
+							</div>
+						</div>
+						<div class="d-flex moyenPaiementDivDon mt-3 justify-content-center">
+							<div
+								class="text-center moyenSousDivDon">{# <button class="btnMoyenDon">
+																																																																								<i class="fa-solid fa-money-check"></i><br><p>Faire un don par chèque</p>
+																																																																							</button> #}
+							</div>
+							<div class="text-center moyenSousDivDon">
+								<button class="btnMoyenDon">
+									<i class="fa-brands fa-cc-stripe"></i><br><p>Payer avec stripe
+									</p>
+								</button>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="d-flex" id="sectionVMCDon">
+						<div class="">
+							<label for="mastercard"><img src="{{asset("styles/img/logo/mastercard-logo.png")}}" alt="log mastercard"></label><br>
+							<input type="radio" name="methodePaiement" id="mastercardRadio">
+						</div>
+						<div class="">
+							<label for="visa"><img src="{{asset("styles/img/logo/Visa-Logo.png")}}" alt="logo visa"></label><br>
+							<input type="radio" name="methodePaiement" id="visaRadio">
+						</div>
+						<div class="">
+							<label for="cb"><img src="{{asset("styles/img/logo/logo-cb.jpg")}}" alt="logo cb"></label><br>
+							<input type="radio" name="methodePaiement" id="cbRadio">
+						</div>
+					</section>
+
+					<section id="sectionCardInfoDon">
+						<input type="text" name="nomCarte" class="nomCarteCotisationDon" placeholder="Nom sur la carte"><br>
+						<input type="text" name="cardNumberCotisationDon" class="cardNumberCotisationDon" placeholder="Numéro de la carte"><input type="number" name="codeCard" class="codeCardCotisationDon" placeholder="Code CVC">
+						<div class="mois-anneeCardCotisation d-flex">
+							<select name="mois" class="moisCotisationDon">
+								<option value="Mois" disabled selected>Mois</option>
+								<option value="01">Janvier</option>
+								<option value="02">Février</option>
+								<option value="03">Mars</option>
+								<option value="04">Avril</option>
+								<option value="05">Mai</option>
+								<option value="06">Juin</option>
+								<option value="07">Juillet</option>
+								<option value="08">Août</option>
+								<option value="09">Septembre</option>
+								<option value="10">Octobre</option>
+								<option value="11">Novembre</option>
+								<option value="12">Décembre</option>
+							</select>
+							<select name="annee" class="anneeCotisationDon">
+								<option value="annee" disabled selected>Année</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+							</select>
+						</div>
+						<div class="d-flex justify-content-center">
+							<button class="validationAdhesionDon">Valider</button>
+						</div>
+					</section>
+				</div>
+			</section>
+		</section>
+
+		<section id="sectionDonMateriel" class="mt-5">
+			<div class="headDonMateriel">Don Matériel</div>
+			<div class="bodyDonMateriel">
+				<p>Entrez vos informations, nous vous contacterons pour un don matériel.</p>
+				<select name="civiliteDonMateriel" class="civiliteDonMateriel">
+					<option value="" selected disabled>Civilité *</option>
+					<option value="m">M</option>
+					<option value="mme">Mme</option>
+					<option value="autre">Autre</option>
+				</select>
+				<input type="text" name="nomDonMateriel" class="nomDonMateriel" placeholder="Nom">
+				<input type="text" name="prenomDonMateriel" class="prenomDonMateriel" placeholder="Prénom">
+				<input type="email" name="emailDonMateriel" class="emailDonMateriel" placeholder="Email">
+				<button class="validationDonMateriel">Valider</button>
+			</div>
+		</section>
+	</div>
+
+	<style>
+		body {
+			background-color: #e1f6fd;
+		}
+	</style>
+
+{% endblock %}

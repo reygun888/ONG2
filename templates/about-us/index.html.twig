@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	A propos
+{% endblock %}
+
+{% block body %}
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+	let observer;
+	let options = {
+	root: null, // utilise le viewport comme zone de visibilité
+	rootMargin: '0px',
+	threshold: 0.1 // déclenche l'observer quand 10% de l'élément est visible
+};
+
+observer = new IntersectionObserver(handleIntersect, options);
+
+// Sélectionner tous les éléments à observer
+document.querySelectorAll('.card-about-us').forEach(section => {
+	observer.observe(section);
+});
+
+function handleIntersect(entries, observer) {
+entries.forEach((entry, index) => {
+	console.log(index)
+	if (entry.isIntersecting) { // Ajoute la classe 'is-visible'
+	entry.target.classList.add('card-' + (
+	index + 1
+			));
+		}
+	});
+	}
+});
+</script>
+
+</head>
+
+<div class="banner">
+	<h1>A propos de nous</h1>
+</div>
+<div class="card-container">
+	<div class=" card-about-us ">
+		<a href="#who-we-are" class="disable-link">
+			<h2>Qui sommes-nous ?</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi ab qui iusto a alias odit, quod illo ad mollitia aliquid, error earum, asperiores natus. Quod blanditiis ad, aliquid repellendus quam eos eum dolorum dicta? Quae facilis sit exercitationem, itaque eum magnam nulla aliquam possimus saepe consectetur excepturi architecto perspiciatis sequi, provident odit commodi repellat cumque doloribus magni! .</p>
+		</a>
+	</div>
+
+	<div class=" card-about-us ">
+		<a href="#what-do-we-do" class="disable-link">
+			<h2>Que faisons-nous ?</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi ab qui iusto a alias odit, quod illo ad mollitia aliquid, error earum, asperiores natus. Quod blanditiis ad, aliquid repellendus quam eos eum dolorum dicta? Quae facilis sit exercitationem, itaque eum magnam nulla aliquam possimus saepe consectetur excepturi architecto perspiciatis sequi, provident odit commodi repellat cumque doloribus mag</p>
+		</a>
+
+	</div>
+
+	<div class="card-about-us ">
+		<a href="#why" class="disable-link">
+			<h2>Pourquoi ?</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi ab qui iusto a alias odit, quod illo ad mollitia aliquid, error earum, asperiores natus. Quod blanditiis ad, aliquid repellendus quam eos eum dolorum dicta? Quae facilis sit exercitationem, itaque eum magnam nulla aliquam possimus saepe consectetur excepturi architecto perspiciatis sequi, provident odit commodi repellat cumque doloribus mag</p>
+		</a>
+
+	</div>
+</div>
+
+
+<!-- Qui sommes-nous ? -->
+<div class="section card-1">
+	<h2 class="about-us-title " id="who-we-are">Qui sommes-nous ?</h2>
+	<div class="flex-container">
+		<div class="flex-item text-content class padding-right">
+			<div class="text-width">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, sapiente eos. Ipsum voluptatum facilis quaerat tempora, dolorum ea ad debitis veniam accusamus. Iure nesciunt ex impedit culpa et aliquid sapiente ut, similique totam ratione, exercitationem facilis natus ipsum eaque veritatis quo quasi nihil officia magnam expedita iusto cum architecto. Assumenda!</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt amet sed adipisci nisi cupiditate aut ratione, eum laudantium ipsum molestiae ut odit reprehenderit facilis iste dolorum debitis commodi nulla error voluptatibus. Voluptas ipsum tempora perspiciatis soluta iure, vero temporibus vel sequi obcaecati totam, dolore reiciendis atque illum. Veniam, debitis vel!.</p>
+			</div>
+		</div>
+		<div class="flex-item">
+			<img src="/img/IMG-20240316-WA0024.jpg" alt="Notre Histoire" class="image-about">
+		</div>
+	</div>
+</div>
+<!-- Que faisons-nous ? -->
+<div class="section">
+	<h2 class="about-us-title animate__animated animate__backInRight " id="what-do-we-do">Que faisons-nous ?</h2>
+	<div class="flex-container">
+		<div class="flex-item">
+			<img src="/img/annie-spratt-m0DUL38R49Y-unsplash.jpg" alt="Nos Programmes" class="image-about">
+		</div>
+		<div class="flex-item text-content class padding-right">
+			<div class="text-width">
+				<p class="text-width">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, sapiente eos. Ipsum voluptatum facilis quaerat tempora, dolorum ea ad debitis veniam accusamus. Iure nesciunt ex impedit culpa et aliquid sapiente ut, similique totam ratione, exercitationem facilis natus ipsum eaque veritatis quo quasi nihil officia magnam expedita iusto cum architecto. Assumenda!</p>
+				<p class="text-width">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt amet sed adipisci nisi cupiditate aut ratione, eum laudantium ipsum molestiae ut odit reprehenderit facilis iste dolorum debitis commodi nulla error voluptatibus. Voluptas ipsum tempora perspiciatis soluta iure, vero temporibus vel sequi obcaecati totam, dolore reiciendis atque illum. Veniam, debitis vel!.</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Pourquoi ? -->
+<div class="section">
+	<h2 class="about-us-title" id="why">Pourquoi ?
+	</h2>
+	<div class="flex-container">
+		<div class="flex-item  class padding-right">
+			<div class="text-width">
+
+				<p class="text-width">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, sapiente eos. Ipsum voluptatum facilis quaerat tempora, dolorum ea ad debitis veniam accusamus. Iure nesciunt ex impedit culpa et aliquid sapiente ut, similique totam ratione, exercitationem facilis natus ipsum eaque veritatis quo quasi nihil officia magnam expedita iusto cum architecto. Assumenda!</p>
+				<p class="text-width">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt amet sed adipisci nisi cupiditate aut ratione, eum laudantium ipsum molestiae ut odit reprehenderit facilis iste dolorum debitis commodi nulla error voluptatibus. Voluptas ipsum tempora perspiciatis soluta iure, vero temporibus vel sequi obcaecati totam, dolore reiciendis atque illum. Veniam, debitis vel!.</p>
+			</div>
+
+		</div>
+		<div class="flex-item">
+			<img src="./img/tetbirt-salim-4LunKr1gTd8-unsplash (1).jpg" alt="Notre Histoire" class="image-about">
+		</div>
+	</div>
+</div>{% endblock %}

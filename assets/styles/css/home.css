@@ -1,0 +1,314 @@
+/*  Voici le style concernant le "carousel" */
+.carousel-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 10vh;
+}
+
+.image-carrousel {
+	height: 700px;
+}
+
+.carousel-caption {
+	margin-bottom: 200px;
+	width: 15rem;
+	background-color: #FFFFFF88;
+	border-radius: 5%;
+	padding: 20px;
+}
+
+.carousel-caption .text {
+	color: #0c4a6e;
+	font-size: 15px
+}
+
+.carousel-caption .btn {
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+/*  Voici le style concernant la div "présentation" */
+#presentation {
+	display: flex;
+	margin-top: 5px;
+	align-items: center;
+	justify-content: center;
+}
+
+#right-side {
+	width: 40%;
+}
+
+#left-side {
+	width: 40%;
+	margin: 50px;
+}
+
+#img-presentation {
+	height: 100;
+	width: 100%;
+}
+
+/* Conteneur de la Map. Cette map interactive a été temporairement remplacée par une capture d'écran. */
+.map-container {
+	text-align: center;
+	margin-top: 50px;
+}
+
+iframe {
+	width: 100%;
+	height: 500px;
+	border: none;
+}
+
+.map-container h2 {
+	margin-bottom: 20px;
+}
+
+/*  Voici le style concernant la div "nos actions" */
+
+#nos-actions {
+	background-color: #f4f4f4;
+	padding: 40px 10px 10px;
+}
+#tete-nos-actions {
+	text-align: center;
+}
+
+#tete-nos-actions p {
+	color: grey;
+}
+
+#card-nos-actions {
+	display: flex;
+	justify-content: center;
+}
+
+#card-nos-actions i {
+	color: white;
+	background: blue;
+	padding: 10px;
+	border-radius: 20%;
+	font-size: 20px;
+	width: 50px;
+	text-align: center;
+}
+
+.card-body .fa-circle-right {
+	float: right;
+}
+
+.card-nos-actions {
+	background: #f7f7f7;
+}
+
+.card-nos-actions:hover {
+	background-color: #006ca8;
+	color: white;
+}
+
+.card-nos-actions .fa-circle-right {
+	background-color: #0084c7 !important;
+}
+
+.card-nos-actions:hover .fa-circle-right {
+	background-color: #fbbe24 !important;
+	color: #26536a !important;
+}
+
+.card-nos-actions .fa-user {
+	background-color: #37bdf9 !important;
+}
+
+.card-nos-actions:hover .fa-user {
+	background-color: white !important;
+	color: #0084c7 !important;
+}
+
+.card-nos-actions .fa-building-shield {
+	background-color: #0084c7 !important;
+}
+
+.card-nos-actions .fa-cloud {
+	background-color: #0c4a6e !important;
+}
+
+.card-nos-actions .fa-seedling {
+	background-color: #37bdf9 !important;
+}
+
+.card-nos-actions:hover .fa-solid {
+	background-color: white !important;
+	color: #0084c7 !important;
+}
+
+/*  Voici le style concernant la div "Actualités" */
+
+
+#tete-actualites {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#body-actualites {
+	display: flex;
+	justify-content: center;
+}
+
+.card-actu {
+	background: #f7f7f7;
+}
+
+.card-actu i {
+	color: white;
+	background: #0084c7;
+	padding: 10px;
+	border-radius: 20%;
+	font-size: 20px;
+	width: 50px;
+	text-align: center;
+}
+
+.card-actu i:hover {
+	background-color: #fbbe24;
+	color: #275669;
+}
+
+.read-more-actu {
+	display: flex;
+	justify-content: center;
+}
+
+#actualites button {
+	border: none;
+	background-color: #0084c7;
+	color: white;
+	border-radius: 5px;
+	margin-bottom: 50px;
+	padding: 10px
+}
+
+#actualites button:hover {
+	background-color: #fbbe24;
+	color: #275669;
+}
+
+/* média quéries pour présentation */
+
+@media(max-width: 768px) {
+	#presentation {
+		flex-direction: column;
+		margin: 10px;
+		padding: 20px;
+		text-align: center;
+	}
+
+	#left-side,
+	#right-side {
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	#img-presentation {
+		height: auto;
+	}
+}
+
+/* Pour : Nos actions */
+
+@media(max-width: 768px) {
+	#nos-actions {
+		padding: 20px 10px;
+	}
+
+	#card-nos-actions {
+		flex-direction: column;
+	}
+
+	@media(max-width: 768px) {
+		#card-nos-actions {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.card-nos-actions {
+			width: 100%;
+			margin: 10px auto;
+			padding: 10px;
+		}
+
+		.card-nos-actions i {
+			font-size: 24px;
+			padding: 8px;
+
+		}
+	}
+}
+
+/* Pour : Actualités */
+
+@media(max-width: 768px) {
+	#actualites {
+		margin: 20px 10px;
+	}
+
+	#body-actualites {
+		flex-direction: column;
+	}
+
+	.card-actu {
+		width: 100%;
+		/* margin: 10px 0; */
+	}
+
+	.card-actu i {
+		font-size: 16px;
+		padding: 8px;
+		width: 40px;
+	}
+
+	#actualites button {
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+
+	.btCard{
+	padding-bottom: 20% !important;
+	}
+
+}
+/* Pour : Carousel */
+
+@media(max-width: 768px) {
+
+	.image-carrousel {
+		height: 300px;
+	}
+
+	.custom-carousel-caption {
+		display: flex !important;
+		align-items: center;
+		font-size: 12px;
+		margin-bottom: 5px;
+		width: 280px;
+		height: 100px;
+		background-color: #FFFFFF88;
+	}
+
+	.custom-carousel-caption .text {
+		font-size: 12px;
+	}
+
+	.custom-carousel-caption .btn {
+		display: none
+	}
+
+	.carousel-item {
+		display: flex !important;
+		align-items: center !important;
+	}
+
+
+}

@@ -1,0 +1,31 @@
+:root {
+    --footer-1-color: #78a3b1;
+    --footer-2-color: #032B43 ;
+    --bouton-don: #FFC436;
+    --bouton-autre: #F88600;
+    --text-1: #ffff;
+    --text-2: #A1A1A1;
+}
+
+.div_h1_p{
+    background-color: rgb(240, 248, 255, 0.3);
+    color: var(--footer-2-color);
+}
+
+.contenu_show_article{
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+.img_show_article{
+    max-height: 10%;
+    object-fit: cover;
+}
+
+.images_show_article{
+    gap:2%;
+   
+}

@@ -1,0 +1,58 @@
+<section id="actualites">
+	<div id="tete-actualites">
+		<h2 class='mb-5'>Actualités</h2>
+	</div>
+	{# <div id="body-actualites">
+		<div class="card mb-3 me-3 card-actu" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="{{ asset('images/photo-actualites2.jpg') }}" alt="..." class="img-fluid rounded-start">
+				</div>
+				<div class="col-md-8">
+					<div class="btCard card-body">
+						<h5 class="card-title">LOREM IPSUM</h5>
+						<p class="card-text">Effectively ensuring that women, girls, men, boys and gender- diverse people can fully enjoy human rights requires, first, a comprehensive understanding of social structures, policies and stereotypes...</p>
+						<a clsse='bt' href="#">
+							<i class="fa-regular fa-circle-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3 card-actu" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="{{ asset('images/photo-actualites2.jpg') }}" alt="..." class="img-fluid rounded-start">
+				</div>
+				<div class="col-md-8">
+					<div class="btCard card-body">
+						<h5 class="card-title">LOREM IPSUM</h5>
+						<p class="card-text">Effectively ensuring that women, girls, men, boys and gender- diverse people can fully enjoy human rights requires, first, a comprehensive understanding of social structures, policies and stereotypes...</p>
+						<a class='bt' href="#">
+							<i class="fa-regular fa-circle-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> #}
+		{% set sortedArticles = articles|sort((a, b) => a.date < b.date ? 1 : -1) %}
+		{% set limitedArticles = sortedArticles|slice(0, 2) %}
+
+		{% for article in limitedArticles %}
+			{% if loop.index % 2 == 1 %}
+				</div><div class="row justify-content-center">
+			{% endif %}
+			<div class="card" id="actualitesCard">
+				<img class="card-img-sm-left" id="actualites-card-img" src="{{ asset('upload/' ~ article.image) }}"/>
+				<div class="card-body" id="actualites-card-body">
+					<h4 class="card-title h5 h4-sm">{{ article.titre }}</h4>
+					<p class="card-text">{{ article.description|striptags|raw }}</p>
+					<a href="{{ path('show_article', {'id': article.id}) }}" class="btn btn-primary">Voir plus</a>
+				</div>
+			</div>
+		{% endfor %}
+	<div class="read-more-actu my-5">
+		<a class='btn btn-primary' href="{{ path("actualites") }}">Plus d'actualités</a>
+	</div>
+</section>

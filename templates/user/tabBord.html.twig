@@ -1,0 +1,58 @@
+<section class='adh'>
+    <h2 class="my-3 text-center text-uppercase">Gerer les Adhérents</h2>
+    <div class="adTable table-responsive-sm d-flex justify-content-center">
+        <table class="aTable table">
+            <thead class="">
+                <tr class="">
+                    <th>Nom/R.Sociale</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                    <th>Rôle</th>
+                    <th class='ico'></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="">
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.type }}</td>
+                    <td>{% for role in user.roles %}
+                        {% if not loop.last %}
+                            {{ role }},
+                        {% else %}
+                            {{ role }}
+                        {% endif %}
+                    {% endfor %}</td>
+                    <td class="ico">
+                    <div class='d-flex'>
+                        <form>
+                        <a class="btn btn-success py-1 px-2" href="{{ path('app_user_edit', {'id': user.id}) }}">
+                            <i class="visu2 fa-solid fa-pen-to-square"></i>
+                        </a>
+                        </form>
+                        <form>
+                        <a class="btn btn-warning py-1 px-2" href="">
+                            <i class="visu2 fa-solid fa-envelope"></i>
+                        </a>
+                        </form>
+                        <form action="{{ path('app_user_delete', {'id': user.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sur de vouloir supprimer votre compte ?')";>
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                            <button type="submit" class="btn btn-danger py-1 px-2">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucune personne trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ path('app_user_new') }}"class='d-flex justify-content-center'><span class="btn btn-warning"> + Ajouter un utilisateur </span></a>
+    <hr>
+</section>

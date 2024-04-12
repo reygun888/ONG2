@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<section id='sectionAdhesion' style="margin-top:8%">
+	<div class="container w-75">
+        
+        <div id="formPersPhy">
+        <h1 class="text-center mb-0">Inscription</h1>
+            {{ form_start(form) }}
+            {{ form_row(form.type) }}
+            <div class="d-flex civiliteSelectDiv" style="">
+                <div class='w-25'>
+                    {{ form_row(form.civilite) }}
+                </div>
+                <div class='w-100 ms-5'>
+                    {{ form_row(form.prenom) }}
+                </div>
+            </div>
+            <div class="d-flex civiliteSelectDiv" style="">
+                <div class='w-100'>
+                    {{ form_row(form.siren) }}
+                </div>
+                <div class='w-100 ms-5'>
+                    {{ form_row(form.formeJuridique) }}
+                </div>
+            </div>
+            {{ form_row(form.nom) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.telephone) }}
+            {{ form_row(form.adresse) }}
+            {{ form_row(form.complementAdresse) }}
+            {{ form_row(form.codePostal) }}
+            {{ form_row(form.ville) }}
+            {{ form_row(form.pays) }}
+            {{ form_row(form.password) }}
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            {{ form_end(form) }}
+        </div>
+	</div>
+</section>
+<script>
+    // Sélectionnez les éléments à masquer/afficher
+    const adherentFields = document.querySelectorAll('#user_civilite, #user_prenom');
+    const entrepriseFields = document.querySelectorAll('#user_siren, #user_formeJuridique');
+
+    // Masquez les champs pour le type "entreprise" par défaut
+    entrepriseFields.forEach(field => {
+        field.style.display = 'none';
+    });
+
+    // Ajoutez un écouteur d'événement sur le champ "type"
+    const typeSelect = document.querySelector('#user_type');
+    typeSelect.addEventListener('change', function() {
+        if (this.value === 'adherent') {
+            // Affichez les champs pour le type "adhérent"
+            adherentFields.forEach(field => {
+                field.style.display = 'block';
+            });
+            // Masquez les champs pour le type "entreprise"
+            entrepriseFields.forEach(field => {
+                field.style.display = 'none';
+            });
+        } else if (this.value === 'entreprise') {
+            // Masquez les champs pour le type "adhérent"
+            adherentFields.forEach(field => {
+                field.style.display = 'none';
+            });
+            // Affichez les champs pour le type "entreprise"
+            entrepriseFields.forEach(field => {
+                field.style.display = 'block';
+            });
+        }
+    });
+</script>
+{% endblock %}

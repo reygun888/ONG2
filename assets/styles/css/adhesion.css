@@ -1,0 +1,711 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section du haut avec l'image */
+
+#sectionImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #bde9f7;
+}
+
+#sectionImg h1 {
+    text-align: center;
+    color: #00749E;
+}
+
+#textSectionImg {
+    text-align: center;
+    margin-top: 5%;
+    width: 30%;
+    margin-left: 35%;
+}
+
+#nosAdherents h2 {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#sectionAdh h3 {
+    color: #00749E;
+    margin-left: 8%;
+}
+
+#p1Adh {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+#sectionAdh {
+    min-height: 100vh;
+}
+
+/* Adhérent simple */
+#adherentSimple i {
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: #5EB1EF;
+}
+
+#adherentSimple {
+    background-color: #E1F6FD;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8%;
+    border-radius: 10px;
+    height: 35vh;
+    border: 1px solid #A9DAED;
+    overflow: scroll;
+}
+
+#headerAdhSimple {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+#textAdhSimple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#textAdhSimple p {
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Adhérent cadre */
+#adherentCadre i {
+    color: white;
+    background-color: #113264;
+    text-align: center;
+    padding-top: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+#adherentCadre {
+    background-color: #E1F6FD;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8%;
+    border-radius: 10px;
+    height: 35vh;
+    border: 1px solid #A9DAED;
+    overflow: scroll;
+}
+
+#headerAdhCadre {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+#textAdhCadre {
+    display: flex;
+}
+
+#textAdhCadre p {
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Section adhésion */
+
+#sectionAdhesion {
+    min-height: 100vh;
+}
+
+#sectionAdhesion h2 {
+    text-align: center;
+}
+
+#divForms {
+    display: flex;
+    justify-content: center;
+}
+
+/* Gestion des styles des formulaires */
+
+#persPhysique {
+    width: 75%;
+}
+
+#headerPersPhysique{
+    display: flex;
+    justify-content: center;
+}
+
+#formPersPhy{
+    width: 60%;
+    margin-left: 20%;
+    /* padding-bottom: 5%; */
+}
+
+#formPersPhy form{
+    margin-top: 5%;
+}
+
+#formPersPhy input{
+    margin-bottom: 3%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 100%;
+}
+
+
+#formPersPhy input::placeholder{
+    color: rgb(163, 163, 163);
+}
+
+#formPersPhy input:focus{
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+
+.civiliteSelect {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    margin-bottom: 3%;
+}
+
+.civiliteSelect:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.paysSelect {
+    width: 100% !important;
+    margin-bottom: 3%;
+    height: 40px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+}
+
+.paysSelect:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+.fj{
+    margin-left: 1% !important;
+}
+
+.pr{
+    margin-left: 2% !important;
+}
+
+/* Section cotisation */
+
+#sectionCotisation {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#sectionCotisation p {
+    font-size: 14px;
+}
+
+#sectionBtn {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.divBtnAdh,
+.divBtnZone {
+    border: 3px solid #60B3D7;
+    border-radius: 7px;
+    display: flex;
+    width: 45%;
+}
+
+#sectionBtn button {
+    border: 0;
+    width: 100%;
+    font-size: 13px;
+    padding: 8px;
+    background-color: white;
+}
+
+#simpleBtn {
+    border-right: 2px solid #60B3D7 !important;
+}
+
+#afriqueBtn {
+    border-right: 2px solid #60B3D7 !important;
+}
+
+.checkedCotisation {
+    background-color: #60B3D7 !important;
+    color: white !important;
+}
+
+#adhPrixDiv {
+    margin-top: 5%;
+    margin-left: 10%;
+    color: rgb(163, 163, 163);
+    width: 40%;
+}
+
+#sectionVMC img {
+    width: 65%;
+}
+
+#sectionVMC {
+    justify-content: center;
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#sectionVMC div {
+    text-align: center;
+    width: 15%;
+}
+
+#sectionVMC label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#sectionVMC input[type="radio"] {
+    display: block;
+    margin: 0 auto;
+}
+
+#sectionCotisationGauche {
+    margin-left: 15%;
+}
+
+.moyenPaiementDiv i {
+    font-size: 45px;
+    color: rgb(163, 163, 163);
+}
+
+.moyenPaiementDiv p {
+    font-size: 10px;
+    margin-top: 3%;
+    color: gray;
+}
+
+.moyenPaiementDiv button {
+    border: 0;
+    background-color: white;
+}
+
+.moyenSousDiv {
+    margin-right: 5%;
+}
+
+.moyenCheckedDiv button {
+    border-bottom: 3px solid #60B3D7;
+}
+
+.moyenCheckedDiv p,
+.moyenCheckedDiv i {
+    color: #60B3D7 !important;
+}
+
+.cardNumberCotisation {
+    margin-bottom: 3%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 60%;
+}
+
+.nomCarteCotisation {
+    margin-bottom: 3%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 90%;
+}
+
+.codeCardCotisation {
+    margin-bottom: 3%;
+    margin-left: 2%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    width: 30%;
+}
+
+
+#sectionCotisationDroite input::placeholder {
+    color: rgb(163, 163, 163);
+}
+
+#sectionCotisationDroite input:focus {
+    border: 3px solid #1D3E56;
+    outline: none;
+}
+
+
+.moisCotisation {
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+    margin-bottom: 3%;
+    margin-right: 12%;
+}
+
+.moisCotisation:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.anneeCotisation {
+    width: 40%;
+    margin-bottom: 3%;
+    height: 40px;
+    border-radius: 10px;
+    border: 3px solid #60B3D7;
+    color: #113264;
+}
+
+.anneeCotisation:focus {
+    outline: none;
+    border: 3px solid #1D3E56;
+}
+
+.validationAdhesion {
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    background-color: var(--bouton-don);
+    color: white;
+    padding: 4px;
+    border: 0;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 992px) {
+    #textSectionImg {
+        text-align: center;
+        margin-top: 5%;
+        width: 50%;
+
+        margin-left: 25%;
+    }
+
+    /* Adhérent simple */
+
+    #adherentSimple i {
+        display: none !important;
+    }
+
+    #headerAdhSimple {
+        display: block;
+        text-align: center;
+    }
+
+    #headerAdhSimple p {
+        font-style: italic;
+    }
+
+    #adherentSimple {
+        height: 80vh;
+        overflow: scroll !important;
+    }
+
+    #textAdhSimple {
+        flex-direction: column;
+    }
+
+    #textAdhSimple p {
+        font-size: 15px;
+        padding: 0;
+    }
+
+    /* Adhérent cadre */
+    #adherentCadre i {
+        display: none !important;
+    }
+
+    #headerAdhCadre {
+        display: block;
+        text-align: center;
+    }
+
+    #headerAdhCadre p {
+        font-style: italic !important;
+    }
+
+    #adherentCadre {
+        height: 80vh;
+        overflow: scroll !important;
+    }
+
+    #textAdhCadre {
+        flex-direction: column;
+    }
+
+    #textAdhCadre p {
+        font-size: 15px;
+        padding: 0;
+    }
+
+    /* Adhésion */
+    #sectionAdhesion h2 {
+        margin-top: 5%;
+    }
+
+    #divForms {
+        flex-direction: column;
+        margin-top: 8%;
+    }
+
+    /* Gestion des styles des formulaires */
+
+    #headerPersPhysique label{
+        margin-left: 3%;
+        font-size: 20px;
+    }
+
+    #persPhysique{
+        width: 80%;
+        padding-top: 2%;
+        margin-left: 10%;
+    }
+
+    #formPersPhy{
+        width: 80%;
+        margin-left: 10%;
+        padding-bottom: 5%;
+    }
+
+    .civiliteSelectDiv {
+        flex-direction: column !important;
+    }
+
+    .juriDiv {
+        flex-direction: column !important;
+    }
+
+    .cpVilleDiv {
+        flex-direction: column !important;
+    }
+
+    .fj,
+    .pr{
+        margin-left: 0% !important;
+    }
+    /* Section cotisation */
+ 
+    #sectionBtn button {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .sectionPrincipaleAdhPrix {
+        flex-direction: column;
+    }
+
+    #adhPrixDiv {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    #sectionVMC img {
+        width: 80%;
+    }
+
+    #sectionVMC {
+        justify-content: space-around !important;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sectionPrincipalePaiement {
+        flex-direction: column !important;
+    }
+
+    #sectionCotisationGauche {
+        width: 90% !important;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+
+    #sectionCotisationDroite {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .moyenPaiementDiv{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #textSectionImg {
+        text-align: center;
+        margin-top: 5%;
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    /* Adhérent simple */
+
+    #adherentSimple i {
+        display: none !important;
+    }
+
+    #headerAdhSimple {
+        display: block;
+        text-align: center;
+    }
+
+    #adherentSimple {
+        height: 100vh;
+        overflow: scroll !important;
+    }
+
+    #textAdhSimple {
+        flex-direction: column;
+    }
+
+    #textAdhSimple p {
+        font-size: 11px;
+        padding: 0;
+    }
+
+    /* Adhérent cadre */
+    #adherentCadre i {
+        display: none !important;
+    }
+
+    #headerAdhCadre {
+        display: block;
+        text-align: center;
+    }
+
+    #adherentCadre {
+        height: 100vh;
+        overflow: scroll !important;
+    }
+
+    #textAdhCadre {
+        flex-direction: column;
+    }
+
+    #textAdhCadre p {
+        font-size: 11px;
+        padding: 0;
+    }
+
+    /* Adhésion */
+    #sectionAdhesion h2 {
+        margin-top: 5%;
+    }
+
+    #divForms {
+        flex-direction: column;
+        margin-top: 8%;
+    }
+
+    /* Gestion des styles des formulaires */
+
+    #headerPersPhysique label,
+    #headerPersMorale label {
+        margin-left: 3%;
+        font-size: 20px;
+    }
+
+
+    #formPersPhy,
+    #formPersMorale {
+        width: 80%!important;
+        margin-left: 10%!important;
+        padding-bottom: 5%;
+    }
+
+    /* Section cotisation */
+
+
+    #sectionCotisation p {
+        font-size: 11px;
+    }
+
+    #sectionBtn {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #sectionBtn button {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .sectionPrincipaleAdhPrix {
+        flex-direction: column;
+    }
+
+    #adhPrixDiv {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    #sectionVMC img {
+        width: 80%;
+    }
+
+    #sectionVMC {
+        justify-content: space-around !important;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sectionPrincipalePaiement {
+        flex-direction: column !important;
+    }
+
+    #sectionCotisationGauche {
+        width: 90% !important;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+
+    #sectionCotisationDroite {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 320px) {}
