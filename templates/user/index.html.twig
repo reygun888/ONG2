@@ -36,11 +36,14 @@
                         <a href="#" class="nmenu nav-link px-0 align-middle filter-type" data-type="entreprise">
                             <i class="fa-solid fa-building"></i><span class="ms-1 d-sm-inline">Entreprises</span>
                         </a>
-                    </li> 
+                    </li>
+
+                    {# A decommenter si vous souhaiter avoir la possiblité de changer le carousel sur cette page #}
                     <li>
                         <a href="#submenu3"class="nmenu nav-link px-0 align-middle">
                             <i class="fa-solid fa-palette"></i><span class="ms-1 d-sm-inline">Custom</span> </a>
                     </li>
+
                     {% endif %}
                     {% if is_granted('ROLE_S_AD') or is_granted('ROLE_ADMIN') %}
                     <li>
@@ -70,6 +73,8 @@
                 </form>
                 {% if is_granted('ROLE_S_AD') %}
                     {% include 'user/tabBord.html.twig'%} 
+
+                    {# A decommenter si vous souhaiter avoir la possiblité de changer le carousel sur cette page #}
                     {% include 'newz/index.html.twig'  %}
                 {% endif %}
                 {% if is_granted('ROLE_S_AD') or is_granted('ROLE_ADMIN') %}
