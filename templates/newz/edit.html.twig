@@ -8,14 +8,13 @@
     <div class="profil my-5" id="formPersPhy">
      {{ form_start(form) }}
         <h3 class="mb-5 text-center">Modifier carousel</h3>
-        <div class="champ d-flex">
+        <div class="champ d-flex justify-content-between">
                 {{ form_row(form.type) }}
-            <div class="mx-3">
+            <div class="mx-5">
                 {{ form_row(form.titre) }}
             </div>
                 {{ form_row(form.date) }}
         </div>
-        
         {{ form_row(form.auteur) }}
 
         {% if newz.image %}

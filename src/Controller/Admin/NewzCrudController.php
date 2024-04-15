@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\ChoiceFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -24,7 +25,13 @@ class NewzCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('type'),
+            ChoiceField::new('type')
+            ->setChoices([
+                'Don' => 'Don',
+                'Article' => 'Article',
+                'Action' => 'Action',
+
+            ]),
             DateField::new('date', 'Ajouté le'),
             TextField::new('Auteur'),
             TextEditorField::new('contenu'),

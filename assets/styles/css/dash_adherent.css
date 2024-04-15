@@ -71,7 +71,7 @@ td{
     .dSearch{
         width: 90% !important;
     }
-    .main-content, .adh, .add, .ent {
+    .main-content, .adh, .art, .cus {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -95,7 +95,7 @@ td{
     .ico{
         font-size: xx-small !important;
         margin: 0% !important;
-        padding-left: 1% !important;
+        /* padding-left: 1% !important; */
 
     }
 

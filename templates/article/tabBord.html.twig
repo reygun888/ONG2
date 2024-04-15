@@ -8,18 +8,26 @@
                     <th>Date</th>
                     <th>Titre</th>
                     <th>Auteur</th>
+                    <th>Image</th>
                     <th class='ico'></th>
                 </tr>
             </thead>
             <tbody>
             {% for article in articles %}
                 <tr>
+                    <td>
                     <div class="desc">
-                    <td>{{ article.description|striptags|raw}}</td>
+                    {{ article.description|striptags|raw}}
                     </div>
+                    </td>
                     <td>{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
                     <td>{{ article.titre }}</td>
                     <td>{{ article.auteur }}</td>
+                    <td>
+                    {% if article.image %}
+                        <img src="{{ asset('upload/' ~ article.image) }}" alt="Miniature" class="img-thumbnail" style="max-width: 50px; max-height: 50px;">
+                    {% endif %}
+                    </td>
                     <td class="ico">
                         <a class="btn btn-success py-1 px-2" href="{{path("update_article", {id: article.id})}}">
                             <i class="visu2 fa-solid fa-pen-to-square"></i>
@@ -42,5 +50,7 @@
             </tbody>
         </table>
     </div>
+        {% if is_granted('ROLE_S_AD') %}
         <a href="{{ path('new_article') }}"class='d-flex justify-content-center'><span class="btn btn-warning"> + Ajouter un article </span></a>
+        {% endif %}
 </section>  

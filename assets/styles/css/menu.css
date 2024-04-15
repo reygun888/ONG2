@@ -178,6 +178,9 @@ header{
 }
 
 @media screen and (max-width: 992px) {
+    .foot{
+        width: 100%;
+    }
     .navbar-nav {
         top: 20%;
         left: 20%;

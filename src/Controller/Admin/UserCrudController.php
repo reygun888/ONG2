@@ -10,8 +10,10 @@ use Symfony\Component\Validator\Constraints\Length;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Validator\Constraints\NotNull;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\PasswordField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -25,7 +27,11 @@ class UserCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('type');
+        yield ChoiceField::new('type')
+        ->setChoices([
+            'Adhérent' => 'adherent',
+            'Entreprise' => 'entreprise',
+        ]);
         yield ArrayField::new('roles');
         yield TextField::new('nom');
         yield TextField::new('email');

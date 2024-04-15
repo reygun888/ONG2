@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class NewzEditType extends AbstractType
@@ -26,9 +27,18 @@ class NewzEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type', TextType::class, [
+            ->add('type', ChoiceType::class, [
+                'choices' => [
+                    'Don' => 'Don',
+                    'Article' => 'Aticle',
+                    'Action' => 'Action',
+                ],
                 'label' => 'Type',
                 'required' => false,
+                'multiple' => false,
+                'attr' => [
+                    'class' => 'civiliteSelect'
+                ],
                 ])
             ->add('titre', TextType::class, [
                 'label' => 'Titre',
